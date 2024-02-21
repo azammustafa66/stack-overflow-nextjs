@@ -1,0 +1,21 @@
+# Ignore build output
+/.next
+
+# Ignore node_modules
+/node_modules
+
+# Ignore coverage reports
+/coverage
+
+# Ignore logs
+/logs
+
+# Ignore temporary files
+/.cache
+/.vscode
+/.idea
+/.DS_Store
+
+# Ignore specific files or directories
+/example.js
+/secret/
