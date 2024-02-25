@@ -19,3 +19,7 @@
 # Ignore specific files or directories
 /example.js
 /secret/
+
+# Ignore json files
+*.json
+*.mjs
