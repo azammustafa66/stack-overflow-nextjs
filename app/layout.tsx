@@ -1,10 +1,27 @@
 import React from 'react';
 import { ClerkProvider } from '@clerk/nextjs';
+// eslint-disable-next-line camelcase
+import { Inter, Space_Grotesk } from 'next/font/google';
+import type { Metadata } from 'next';
 
 import './globals.css';
 
-export const metadata = {
-  title: 'Next.js 14 with clark',
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-spaceGrotesk',
+});
+
+export const metadata: Metadata = {
+  title: 'DevFlow',
+  description:
+    'Get help with your coding problems. Find answers, ask questions, and connect with other developers.',
 };
 
 export default function RootLayout({
@@ -13,9 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        elements: {
+          formButtonPrimary: 'primary-gradient',
+          footerActionLink: 'primary-text-gradient hover:text-primary-500',
+        },
+      }}
+    >
       <html lang='en'>
-        <body>{children}</body>
+        <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
