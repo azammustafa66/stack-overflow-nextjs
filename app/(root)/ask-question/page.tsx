@@ -1,12 +1,9 @@
-export default function AskQuestion() {
+import React from 'react';
+
+export default function Page() {
   return (
-    <div>
-      <h1>Ask Question</h1>
-      <form>
-        <input type='text' placeholder='Title' />
-        <textarea placeholder='Description' />
-        <button type='submit'>Ask Question</button>
-      </form>
-    </div>
+    <main>
+      <h1>Ask a question</h1>
+    </main>
   );
 }
